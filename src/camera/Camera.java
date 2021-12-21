@@ -2,16 +2,26 @@ package camera;
 
 public class Camera {
 
+    private Sensor sensor;
+    private MemoryCard memoryCard;
+    private byte[] data;
+
+    public Camera(Sensor sensor, MemoryCard memoryCard) {
+        this.sensor = sensor;
+        this.memoryCard = memoryCard;
+    }
+
     public void pressShutter() {
-        // not implemented
+        //sensor.readData();
+        memoryCard.write(data);
     }
 
     public void powerOn() {
-        // not implemented
+        sensor.powerUp();
     }
 
     public void powerOff() {
-       // not implemented
+       sensor.powerDown();
     }
 }
 
